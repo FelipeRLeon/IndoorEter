@@ -84,7 +84,7 @@ void interfaz(){
     myOled.drawRect(5, 35, 29, 21, WHITE);
     myOled.setTextCursor(9,39);
     myOled.setTextSize(2);
-    myOled.printf("H1");
+    myOled.printf("H2");
     myOled.setTextCursor(40,39);
     myOled.printf("00.00 %%");
     myOled.display();

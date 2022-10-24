@@ -1,5 +1,6 @@
-BUILD\NUCLEO_L476RG\ARMC6\main.o: main.cpp \
-  BUILD\NUCLEO_L476RG\ARMC6\mbed_config.h mbed-os\mbed.h \
+BUILD\NUCLEO_L476RG\ARMC6\HTU21D\HTU21D\HTU21D.o: \
+  HTU21D\HTU21D\HTU21D.cpp BUILD\NUCLEO_L476RG\ARMC6\mbed_config.h \
+  HTU21D\HTU21D\HTU21D.h mbed-os\mbed.h \
   mbed-os\platform\include\platform\mbed_version.h \
   mbed-os\rtos\include\rtos\rtos.h \
   mbed-os\rtos\include\rtos\internal\mbed_rtos_storage.h \
@@ -318,7 +319,4 @@ BUILD\NUCLEO_L476RG\ARMC6\main.o: main.cpp \
   mbed-os\platform\include\platform\ScopedRamExecutionLock.h \
   mbed-os\platform\include\platform\mbed_stats.h \
   mbed-os\platform\include\platform\Stream.h \
-  mbed-os\platform\include\platform\FileLike.h \
-  Adafruit_GFX\Adafruit_SSD1306.h Adafruit_GFX\Adafruit_GFX.h \
-  Adafruit_GFX\Adafruit_GFX_Config.h ds3231\ds3231.h \
-  HTU21D\HTU21D\HTU21D.h
+  mbed-os\platform\include\platform\FileLike.h

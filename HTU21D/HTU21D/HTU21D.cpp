@@ -45,11 +45,11 @@ int HTU21D::sample_ctemp(void) {
 
     tx[0] = TRIGGER_TEMP_MEASURE; // Triggers a temperature measure by feeding correct opcode.
     i2c_->write((HTU21D_I2C_ADDRESS << 1) & 0xFE, tx, 1);
-    wait_ms(50); // Per datasheet, wait long enough for device to sample temperature
+    ThisThread::sleep_for(50ms); // Per datasheet, wait long enough for device to sample temperature
     
     // Reads triggered measure
     i2c_->read((HTU21D_I2C_ADDRESS << 1) | 0x01, rx, 2);
-    wait_ms(1);
+    ThisThread::sleep_for(1ms);
     
     // Algorithm from datasheet to compute temperature.
     unsigned int rawTemperature = ((unsigned int) rx[0] << 8) | (unsigned int) rx[1];
@@ -86,11 +86,11 @@ int HTU21D::sample_humid(void) {
 
     tx[0] = TRIGGER_HUMD_MEASURE; // Triggers a humidity measure by feeding correct opcode.
     i2c_->write((HTU21D_I2C_ADDRESS << 1) & 0xFE, tx, 1);
-    wait_ms(16); // Per datasheet, wait long enough for device to sample humidity
+    ThisThread::sleep_for(16ms); // Per datasheet, wait long enough for device to sample humidity
     
     // Reads triggered measure
     i2c_->read((HTU21D_I2C_ADDRESS << 1) | 0x01, rx, 2);
-    wait_ms(1);
+    ThisThread::sleep_for(1ms);
     
     //Algorithm from datasheet.
     unsigned int rawHumidity = ((unsigned int) rx[0] << 8) | (unsigned int) rx[1];
